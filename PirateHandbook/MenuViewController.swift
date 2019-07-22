@@ -30,4 +30,11 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+  @IBOutlet weak var contentView: UIView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.contentView.layer.borderColor = UIColor.black.cgColor
+    self.contentView.layer.borderWidth = 1.0
+  }
 }
