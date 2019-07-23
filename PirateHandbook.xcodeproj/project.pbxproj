@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B46275601E380C9E003585F7 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B462755F1E380C9E003585F7 /* WeatherViewController.swift */; };
 		B48140A11DCA9AB200F6847C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48140A01DCA9AB200F6847C /* MapViewController.swift */; };
 		B4A9F5701DC8E8110031229A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A9F56F1DC8E8110031229A /* AppDelegate.swift */; };
+		B4A9F5721DC8E8110031229A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A9F5711DC8E8110031229A /* MenuViewController.swift */; };
 		B4A9F5751DC8E8110031229A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A9F5731DC8E8110031229A /* Main.storyboard */; };
 		B4A9F5771DC8E8110031229A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A9F5761DC8E8110031229A /* Assets.xcassets */; };
 		B4A9F57A1DC8E8110031229A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A9F5781DC8E8110031229A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B462755F1E380C9E003585F7 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		B48140A01DCA9AB200F6847C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B4A9F56C1DC8E8110031229A /* PirateHandbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateHandbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A9F56F1DC8E8110031229A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4A9F5711DC8E8110031229A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B4A9F5741DC8E8110031229A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4A9F5761DC8E8110031229A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4A9F5791DC8E8110031229A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				B4A9F56F1DC8E8110031229A /* AppDelegate.swift */,
+				B4A9F5711DC8E8110031229A /* MenuViewController.swift */,
+				B462755F1E380C9E003585F7 /* WeatherViewController.swift */,
 				B48140A01DCA9AB200F6847C /* MapViewController.swift */,
 				B4A9F5731DC8E8110031229A /* Main.storyboard */,
 				B4A9F5761DC8E8110031229A /* Assets.xcassets */,
@@ -96,7 +102,6 @@
 				TargetAttributes = {
 					B4A9F56B1DC8E8110031229A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 4AQJ37X836;
 						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
@@ -138,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A9F5721DC8E8110031229A /* MenuViewController.swift in Sources */,
+				B46275601E380C9E003585F7 /* WeatherViewController.swift in Sources */,
 				B48140A11DCA9AB200F6847C /* MapViewController.swift in Sources */,
 				B4A9F5701DC8E8110031229A /* AppDelegate.swift in Sources */,
 			);
@@ -214,7 +221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -267,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -280,8 +287,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4AQJ37X836;
 				INFOPLIST_FILE = PirateHandbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.PirateHandbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,8 +300,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4AQJ37X836;
 				INFOPLIST_FILE = PirateHandbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.PirateHandbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";

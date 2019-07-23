@@ -41,10 +41,7 @@ final class MapViewController: UIViewController {
   
   func setMarkerToArrowOrX() {
     let currentPoint = marker.frame.origin
-    let desiredPoint = CGPoint(
-      x: desiredXConstraint.constant,
-      y: desiredYConstraint.constant
-    )
+    let desiredPoint = CGPoint(x: desiredXConstraint.constant, y:  desiredYConstraint.constant)
     
     let imageName: String
     let transform: CGAffineTransform
@@ -55,9 +52,7 @@ final class MapViewController: UIViewController {
     }
     else {
       imageName = "arrow"
-      transform = CGAffineTransform(
-        rotationAngle: (desiredPoint - currentPoint).angle
-      )
+      transform = CGAffineTransform(rotationAngle: (desiredPoint - currentPoint).angle)
     }
     
     markerImageView.image = UIImage(named: imageName)
