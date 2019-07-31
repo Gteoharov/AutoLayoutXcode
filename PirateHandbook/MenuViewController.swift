@@ -27,7 +27,7 @@ final class MenuViewController: UIViewController {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: false)
   }
-    
+  
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(false, animated: true)
