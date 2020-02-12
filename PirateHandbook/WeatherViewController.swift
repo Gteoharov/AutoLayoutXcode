@@ -35,42 +35,39 @@ final class WeatherViewController: UIViewController {
     }
     
     let spacerGuides = (0..<images.count - 1).map {_ in UILayoutGuide()}
-    let containerGuide = UILayoutGuide()
     
     imageViews.forEach(view.addSubview)
     spacerGuides.forEach(view.addLayoutGuide)
-    view.addLayoutGuide(containerGuide)
+    
     
     NSLayoutConstraint.activate(
-      [ containerGuide.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        containerGuide.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor),
-        containerGuide.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor),
-        { let constraint = spacerGuides.first!.widthAnchor.constraint(equalToConstant: 80)
-          constraint.priority = UILayoutPriority(749)
-          return constraint
-        }(),
-        spacerGuides.last!.widthAnchor.constraint(equalTo: spacerGuides.first!.widthAnchor)
-      ]
-      + imageViews.enumerated().flatMap {index, imageView in
-        [ imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-          imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor),
-          imageView.leadingAnchor.constraint(
-            equalTo:
-              imageView == imageViews.first!
-              ? containerGuide.leadingAnchor
-              : spacerGuides[index - 1].trailingAnchor
-          ),
-          imageView.trailingAnchor.constraint(
-            equalTo:
-              imageView == imageViews.last!
-              ? containerGuide.trailingAnchor
-              : spacerGuides[index].leadingAnchor
-          )
-        ]
-      }
-      + imageViews.dropFirst().map {
-        $0.widthAnchor.constraint(equalTo: imageViews.first!.widthAnchor)
-      }
+        NSLayoutConstraint.constraints(
+            withVisualFormat: """
+            |[leftGap]\
+            -[monday(fullWidth@849)]-(bigGap)\
+            -[tuesday(smaller@849)]-(gap)-[wednesday(smaller@849)]\
+            -(gap)-[rightGap(==leftGap)]|
+            """
+            ,
+            options: .alignAllBottom,
+            metrics: {
+                let imageWidth = imageViews[0].image!.size.width
+                let gap: CGFloat = 8
+                return [
+                    "fullWidth": imageWidth,
+                    "smaller": imageWidth * 0.7,
+                    "bigGap": gap * 3,
+                    "gap": gap
+                ]
+            }(),
+            views: Dictionary(uniqueKeysWithValues: [
+                (["monday", "tuesday", "wednesday"], imageViews),
+                (["leftGap", "rightGap"], spacerGuides)
+                ].flatMap {(keys, values: [Any]) in zip(keys, values) }
+            )
+        )
+      + [imageViews[0].centerYAnchor.constraint(equalTo: view.centerYAnchor)]
+      + imageViews.map {$0.heightAnchor.constraint(equalTo: $0.widthAnchor)}
     )
   }
 }
